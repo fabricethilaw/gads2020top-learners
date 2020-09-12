@@ -1,9 +1,10 @@
-package com.thilawfabrice.gads2020leaderboard
+package com.thilawfabrice.gads2020leaderboard.views
 
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.thilawfabrice.gads2020leaderboard.R
 
 class LaunchScreen : AppCompatActivity() {
 
