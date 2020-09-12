@@ -1,5 +1,6 @@
 package com.thilawfabrice.gads2020leaderboard.views
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -13,17 +14,17 @@ class LaunchScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
-        displayHomeScreen(SPLASH_DISPLAY_LENGHT.toLong())
+        displayLeaderboardScreen(SPLASH_DISPLAY_LENGHT.toLong())
     }
 
     /**
-     * Display Home screen automatically
+     * Display Leaderboard screen automatically
      * after the specified amount of time elapses
      */
-    private fun displayHomeScreen(delayMillisecondsTime: Long) {
+    private fun displayLeaderboardScreen(delayMillisecondsTime: Long) {
         Handler(Looper.getMainLooper()).postDelayed({
-            //  val intent = Intent(this, HomeScreen::class.java)
-            //  startActivity(intent)
+            val intent = Intent(this, LeaderBoardScreen::class.java)
+            startActivity(intent)
             finish()
 
         }, delayMillisecondsTime)
