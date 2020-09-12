@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.thilawfabrice.gads2020leaderboard.R
 import com.thilawfabrice.gads2020leaderboard.viewmodels.ListItemData
 
@@ -44,11 +45,8 @@ class SkillIQLeaderAdapter(private val data: MutableList<ListItemData> = mutable
             with(itemData) {
                 nameTextView.text = name
                 detailsTextView.text = details
-                //todo  iconImageView
-
+                Glide.with(itemView.context).load(badge).into(iconImageView)
             }
-
-
         }
     }
 

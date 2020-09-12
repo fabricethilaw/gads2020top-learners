@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.thilawfabrice.gads2020leaderboard.models.LearnerModel
 import com.thilawfabrice.gads2020leaderboard.models.SkillIQModel
+import com.thilawfabrice.gads2020leaderboard.repository.GadsApi
 
 class PageViewModel : ViewModel() {
 
@@ -12,12 +13,32 @@ class PageViewModel : ViewModel() {
     private val liveSkillIQs = MutableLiveData<List<SkillIQModel>>()
 
 
-    fun getTopLearners(): LiveData<List<LearnerModel>> {
-        return MutableLiveData<List<LearnerModel>>()
+    suspend fun getTopLearners(api: GadsApi): LiveData<List<LearnerModel>> {
+        val response = api.getLearningLearners()
+        return when (response.isSuccessful) {
+            true -> {
+                liveLearners.postValue(response.body()!!)
+                liveLearners
+            }
+            false -> {
+                liveLearners.postValue(listOf())
+                liveLearners
+            }
+        }
     }
 
-    fun getTopSkillIQs(): LiveData<List<SkillIQModel>> {
-        return MutableLiveData<List<SkillIQModel>>()
+    suspend fun getTopSkillIQs(api: GadsApi): LiveData<List<SkillIQModel>> {
+        val response = api.getTopSkillIQs()
+        return when (response.isSuccessful) {
+            true -> {
+                liveSkillIQs.postValue(response.body()!!)
+                liveSkillIQs
+            }
+            false -> {
+                liveSkillIQs.postValue(listOf())
+                liveSkillIQs
+            }
+        }
     }
 
 }
@@ -28,7 +49,7 @@ fun List<LearnerModel>.toLearnersItemData() = map {
     ListItemData(
         name = it.name,
         badge = it.badgeUrl,
-        details = "${it.hour} learning hours, ${it.country}"
+        details = "${it.hours} learning hours, ${it.country}"
     )
 }
 

@@ -21,7 +21,7 @@
             android:id="@+id/icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/skill_iq_trimmed"
+            tools:src="@drawable/skill_iq_trimmed"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintDimensionRatio="1:1"
             card_view:layout_constraintStart_toStartOf="parent"

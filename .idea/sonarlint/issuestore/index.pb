@@ -1,0 +1,27 @@
+
+{
+Kapp/src/main/java/com/thilawfabrice/gads2020leaderboard/models/DataModel.kt,f\5\f51d7bb500f7530321f62a5ea01eb8e8a0e2a144
+é
+^app/src/main/java/com/thilawfabrice/gads2020leaderboard/views/adapters/SectionsPagerAdapter.kt,8\e\8eadd258899c3e2d2d94e13e40b57233d287f90a
+}
+Mapp/src/main/java/com/thilawfabrice/gads2020leaderboard/views/LaunchScreen.kt,b\8\b8ac7fde2bfa4714a418a2be33e4de67ed63d41b
+Ç
+Rapp/src/main/java/com/thilawfabrice/gads2020leaderboard/views/LeaderBoardScreen.kt,8\e\8e50c4e65cb757b353335be5aead775de99b8ef3
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+}
+Mapp/src/main/java/com/thilawfabrice/gads2020leaderboard/repository/GadsApi.kt,0\6\0692fb2a1f13e2ba517823c2e2a71754b6585cca
+n
+>app/src/main/java/com/thilawfabrice/gads2020leaderboard/App.kt,4\7\47ac32a04cd6ea9975db3f32177192a667c5dd88
+É
+Sapp/src/main/java/com/thilawfabrice/gads2020leaderboard/viewmodels/PageViewModel.kt,5\b\5bf75fd7841c71d377b852df998ff3cbd7137c20
+á
+Wapp/src/main/java/com/thilawfabrice/gads2020leaderboard/views/SkillIQLeadersFragment.kt,3\2\32ac13faaa172e0d4596a221f74564bfe467ba9a
+é
+^app/src/main/java/com/thilawfabrice/gads2020leaderboard/views/adapters/SkillIQLeaderAdapter.kt,3\8\38fbbba249e551f5befc0437da9a1338504a6611
+à
+Xapp/src/main/java/com/thilawfabrice/gads2020leaderboard/views/LearningLeadersFragment.kt,6\9\69d6c59056c8861ea6b1eea11c620ccd3d6ce521
+è
+_app/src/main/java/com/thilawfabrice/gads2020leaderboard/views/adapters/LearningLeaderAdapter.kt,4\e\4e5a926d0bb5de32ffc7743b2cb9821bfdc374a6

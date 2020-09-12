@@ -1,16 +1,23 @@
 package com.thilawfabrice.gads2020leaderboard.views
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
+import com.thilawfabrice.gads2020leaderboard.App
 import com.thilawfabrice.gads2020leaderboard.R
 import com.thilawfabrice.gads2020leaderboard.viewmodels.PageViewModel
 import com.thilawfabrice.gads2020leaderboard.viewmodels.toLearnersItemData
 import com.thilawfabrice.gads2020leaderboard.views.adapters.LearningLeaderAdapter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 /**
  * A  fragment containing top learning leaders .
@@ -22,10 +29,6 @@ class LearningLeadersFragment : Fragment() {
     private val pageViewModel: PageViewModel by activityViewModels()
     private val mAdapter by lazy { LearningLeaderAdapter() }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,14 +38,22 @@ class LearningLeadersFragment : Fragment() {
 
         initializeUI(listView)
         updateUIWhenDataIsAvailable()
-        pageViewModel.getTopLearners()
         return root
     }
 
     private fun updateUIWhenDataIsAvailable() {
-        pageViewModel.getTopLearners().observe(viewLifecycleOwner, { data ->
-            mAdapter.update(data.toLearnersItemData())
-        })
+        lifecycleScope.launch(
+            Dispatchers.Main
+        ) {
+            pageViewModel.getTopLearners(App.gadsApi).observe(viewLifecycleOwner) { data ->
+
+                Handler(Looper.getMainLooper()).post {
+                    Toast.makeText(requireContext(), "Learners ${data.size}", Toast.LENGTH_SHORT)
+                        .show()
+                    mAdapter.update(data.toLearnersItemData())
+                }
+            }
+        }
     }
 
     private fun initializeUI(listView: RecyclerView) {
