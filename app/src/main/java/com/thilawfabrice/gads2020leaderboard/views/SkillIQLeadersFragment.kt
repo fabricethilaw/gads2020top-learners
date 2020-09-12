@@ -45,7 +45,7 @@ class SkillIQLeadersFragment : Fragment() {
     private fun updateUIWhenDataIsAvailable() {
         lifecycleScope.launch(Dispatchers.Main) {
 
-            pageViewModel.getTopSkillIQs(App.gadsApi).observe(viewLifecycleOwner) { data ->
+            pageViewModel.getTopSkillIQs(App.gadsLearningApi).observe(viewLifecycleOwner) { data ->
 
                 Handler(Looper.getMainLooper()).post {
                     Toast.makeText(

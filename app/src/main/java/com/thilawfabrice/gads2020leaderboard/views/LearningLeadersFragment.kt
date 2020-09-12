@@ -45,7 +45,7 @@ class LearningLeadersFragment : Fragment() {
         lifecycleScope.launch(
             Dispatchers.Main
         ) {
-            pageViewModel.getTopLearners(App.gadsApi).observe(viewLifecycleOwner) { data ->
+            pageViewModel.getTopLearners(App.gadsLearningApi).observe(viewLifecycleOwner) { data ->
 
                 Handler(Looper.getMainLooper()).post {
                     Toast.makeText(requireContext(), "Learners ${data.size}", Toast.LENGTH_SHORT)

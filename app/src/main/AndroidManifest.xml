@@ -3,6 +3,7 @@
     package="com.thilawfabrice.gads2020leaderboard">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -11,6 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".views.SubmitRepository"
+            android:label="@string/title_activity_submit_repository"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".views.LeaderBoardScreen"
             android:label="@string/title_activity_leaderboard_screen"
