@@ -27,3 +27,6 @@ Xapp/src/main/java/com/thilawfabrice/gads2020leaderboard/views/LearningLeadersFr
 _app/src/main/java/com/thilawfabrice/gads2020leaderboard/views/adapters/LearningLeaderAdapter.kt,4\e\4e5a926d0bb5de32ffc7743b2cb9821bfdc374a6
 Å
 Qapp/src/main/java/com/thilawfabrice/gads2020leaderboard/views/SubmitRepository.kt,d\0\d08c78b1d22df0e28d8b63ce83376a6d203d456c
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

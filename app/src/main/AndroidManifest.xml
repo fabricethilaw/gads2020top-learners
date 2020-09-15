@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".views.SubmitRepository"
+            android:name=".views.SubmitScreen"
             android:label="@string/title_activity_submit_repository"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity

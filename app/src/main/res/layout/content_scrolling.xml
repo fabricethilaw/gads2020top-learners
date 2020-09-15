@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".views.SubmitRepository"
+    tools:context=".views.SubmitScreen"
     tools:showIn="@layout/activity_submit_repository">
 
     <androidx.constraintlayout.widget.ConstraintLayout

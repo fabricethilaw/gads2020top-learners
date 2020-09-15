@@ -21,7 +21,7 @@ class LeaderBoardScreen : AppCompatActivity() {
         // todo disable allcaps on tabs
         tabs.setupWithViewPager(viewPager)
         btnSubmitProject.setOnClickListener {
-            startActivity(Intent(this, SubmitRepository::class.java))
+            startActivity(Intent(this, SubmitScreen::class.java))
         }
 
 
